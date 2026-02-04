@@ -1,0 +1,25 @@
+app/public/assets
+app/public/build
+app/public/css
+app/public/js
+app/public/media
+
+###> symfony/framework-bundle ###
+app/composer.lock
+app/.env.*.local
+app/.env.local
+app/.env.local.php
+app/public/bundles
+app/var/
+app/vendor/
+###< symfony/framework-bundle ###
+
+###> friendsofphp/php-cs-fixer ###
+app/.php_cs
+app/.php_cs.cache
+###< friendsofphp/php-cs-fixer ###
+
+###> phpunit/phpunit ###
+app/.phpunit.result.cache
+app/phpunit.xml
+###< phpunit/phpunit ###
