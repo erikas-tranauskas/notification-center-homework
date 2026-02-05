@@ -43,8 +43,8 @@ curl -X GET "http://notification-center.local/notifications?user_id=2" -H "X-API
 [
     {
         "title": "Configurar dispositivo Android",
-        "description": "Phasellus rhoncus ante dolor...",
-        "ctaUrl": "[https://trendos.com/](https://trendos.com/)"
+        "description": "Phasellus rhoncus ante dolor, at semper metus aliquam quis. Praesent finibus pharetra libero, ut feugiat mauris dapibus blandit. Donec sit.",
+        "ctaUrl": "https://trendos.com/"
     }
 ]
 </pre>
