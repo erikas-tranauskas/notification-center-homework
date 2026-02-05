@@ -6,7 +6,7 @@ namespace App\Service\Notification;
 
 use App\Repository\UserRepository;
 use App\Response\Notification\Notification;
-use Exception;
+use App\Exception\UserNotFoundException;
 
 class NotificationService
 {
@@ -22,7 +22,7 @@ class NotificationService
         $user = $this->userRepository->find($userId);
 
         if (!$user) {
-            throw new Exception("User $userId not found.");
+            throw new UserNotFoundException($userId);
         }
 
         $notifications = [];

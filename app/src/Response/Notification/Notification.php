@@ -13,12 +13,12 @@ class Notification
         return $this->title;
     }
 
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
 
-    public function getCtaUrl(): string
+    public function getCtaUrl(): ?string
     {
         return $this->ctaUrl;
     }
@@ -30,14 +30,14 @@ class Notification
         return $this;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
 
         return $this;
     }
 
-    public function setCtaUrl(string $ctaUrl): self
+    public function setCtaUrl(?string $ctaUrl): self
     {
         $this->ctaUrl = $ctaUrl;
 

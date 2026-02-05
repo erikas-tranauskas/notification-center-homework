@@ -3,6 +3,7 @@ app/public/build
 app/public/css
 app/public/js
 app/public/media
+.idea
 
 ###> symfony/framework-bundle ###
 app/composer.lock
