@@ -27,5 +27,15 @@ services:
         arguments:
             $rules: !tagged_iterator app.notification_rule
 
+    App\EventListener\ApiTokenListener:
+        arguments:
+            $apiToken: "interview-secret-token"
+        tags:
+            - {
+                  name: kernel.event_listener,
+                  event: kernel.request,
+                  method: onKernelRequest,
+              }
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

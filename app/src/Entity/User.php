@@ -14,6 +14,11 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Index(columns: ['last_active_at'], name: 'idx_user_last_active')]
 class User
 {
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable();
+    }
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
@@ -39,11 +44,6 @@ class User
 
     #[ORM\Column(type: 'datetime_immutable')]
     private \DateTimeImmutable $createdAt;
-
-    public function __construct()
-    {
-        $this->createdAt = new \DateTimeImmutable();
-    }
 
     public function getId(): ?int
     {
