@@ -20,7 +20,19 @@ applications (web front-end, mobile applications, etc.), and notifications from
 this response will be displayed to users. You are tasked to design and implement this API.
 
 You need to create an API and implement the first notification rule that should be shown to users when:
+In our web application we have a requirement to show various notifications for our users. To achieve this,
+we decided to create a separate API (using PHP) with a single endpoint that should receive user id and
+respond with an array of viable notifications. Notification should have a title, description, and
+a cta url link in its response. This endpoint will be polled from different kinds of
+applications (web front-end, mobile applications, etc.), and notifications from
+this response will be displayed to users. You are tasked to design and implement this API.
 
+You need to create an API and implement the first notification rule that should be shown to users when:
+
+- User doesn't have an Android device attached;
+- User is not on premium mode;
+- User is from Spain (country code is "ES");
+- This notification should be shown only for those users that were not active during the last week.
 - User doesn't have an Android device attached;
 - User is not on premium mode;
 - User is from Spain (country code is "ES");
@@ -59,6 +71,21 @@ curl -X GET "http://notification-center.local/notifications?user_id=2" -H "X-API
 
 ## Installation
 
+- Run `docker-compose up -d --build` inside `docker` directory to build and start the containers.
+- Run composer install in the container `docker-compose exec php composer install`.
+- The provided `dump.sql` is automatically imported into the database when the Docker containers are started.
+
+---
+
+## Production considerations
+
+In real-world applications, I would recommend implementing the following features:
+
+- Security: authentication and rate limiting.
+- Performance: caching.
+- Monitoring: logging and alerts.
+- Versioning: API versioning (for example, URL `/api/v1/notifications`).
+- Documentation: OpenAPI, Swagger UI.
 - Run `docker-compose up -d --build` inside `docker` directory to build and start the containers.
 - Run composer install in the container `docker-compose exec php composer install`.
 - The provided `dump.sql` is automatically imported into the database when the Docker containers are started.
