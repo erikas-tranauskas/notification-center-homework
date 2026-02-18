@@ -10,6 +10,6 @@ class UserNotFoundException extends NotFoundHttpException
 {
     public function __construct(int $userId)
     {
-        parent::__construct("User $userId not found.");
+        parent::__construct("User $userId not found.", null, 404);
     }
 }
